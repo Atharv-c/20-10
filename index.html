@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry 🥹💗</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffe0ec, #eadcff);
+}
+
+.card {
+    background: white;
+    padding: 30px 22px;
+    border-radius: 25px;
+    text-align: center;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 8px 25px #00000015;
+}
+
+.heart {
+    font-size: 55px;
+}
+
+h1 {
+    color: #f05289;
+}
+
+p {
+    color: #777;
+    line-height: 1.7;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ffc0d6;
+    border-radius: 12px;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+}
+
+button {
+    margin: 8px 4px;
+    background: #ff6195;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 22px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #e84378;
+}
+
+#result, #extraSorry {
+    margin-top: 20px;
+    color: #ed4d86;
+    line-height: 2;
+    overflow-wrap: anywhere;
+}
+
+#result {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="heart">🥹💗</div>
+
+    <h1>I'm Sorry!</h1>
+
+    <p>
+        Kitni baar sorry bolu? 🥺<br>
+        Number enter karo madam ji 😚
+    </p>
+
+    <input
+        type="number"
+        id="count"
+        min="1"
+        max="500"
+        placeholder="Enter a number 💕"
+    >
+
+    <br>
+
+    <button onclick="showSorry()">
+        Say Sorry 🫶🏻
+    </button>
+
+    <div id="result"></div>
+
+    <hr style="border: 1px solid #ffe0ec; margin: 20px 0;">
+
+    <p>Ab maaf kar do na please? 🥹💗</p>
+
+    <button onclick="addSorry()">
+        Maaf kar do na 🥺
+    </button>
+
+    <div id="extraSorry"></div>
+
+</div>
+
+<script>
+function showSorry() {
+    const count = Number(document.getElementById("count").value);
+    const result = document.getElementById("result");
+
+    result.innerHTML = "";
+
+    if (!Number.isInteger(count) || count < 1 || count > 500) {
+        result.textContent =
+            "Enter a number between 1 and 500 🥹💗";
+        return;
+    }
+
+    for (let i = 1; i <= count; i++) {
+        result.innerHTML +=
+            "Sorry " + i + " 🥹💗🫶🏻<br>";
+    }
+}
+
+let sorryCount = 0;
+
+function addSorry() {
+    sorryCount++;
+
+    const message = document.createElement("div");
+
+    message.textContent =
+        "SORRYYYY 🥹💗🫶🏻";
+
+    document.getElementById("extraSorry").appendChild(message);
+}
+</script>
+
+</body>
+</html>
